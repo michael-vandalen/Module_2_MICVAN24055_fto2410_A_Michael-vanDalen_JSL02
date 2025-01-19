@@ -59,7 +59,15 @@ const addNewGoal = () => {
 
   const newGoal = document.createElement("li");
   newGoal.textContent = goalInput;
+
+  newGoal.addEventListener("click", function () {
+    this.remove(); //Removes the clicked li items
+  });
+
   goalList.appendChild(newGoal);
+
+  //This clears input field when submitting a goal
+  document.getElementById("goalInput").value = "";
 };
 
 // Add event listener to the goal submit button
